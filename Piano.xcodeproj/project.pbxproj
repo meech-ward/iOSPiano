@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22388E591A365D45003B22B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E581A365D45003B22B6 /* main.m */; };
+		22388E5C1A365D45003B22B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E5B1A365D45003B22B6 /* AppDelegate.m */; };
+		22388E5F1A365D45003B22B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E5E1A365D45003B22B6 /* ViewController.m */; };
+		22388E621A365D45003B22B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22388E601A365D45003B22B6 /* Main.storyboard */; };
+		22388E641A365D45003B22B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22388E631A365D45003B22B6 /* Images.xcassets */; };
+		22388E671A365D45003B22B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22388E651A365D45003B22B6 /* LaunchScreen.xib */; };
+		22388E731A365D46003B22B6 /* PianoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E721A365D46003B22B6 /* PianoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22388E6D1A365D46003B22B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22388E4B1A365D45003B22B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22388E521A365D45003B22B6;
+			remoteInfo = Piano;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22388E531A365D45003B22B6 /* Piano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22388E571A365D45003B22B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22388E581A365D45003B22B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22388E5A1A365D45003B22B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22388E5B1A365D45003B22B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22388E5D1A365D45003B22B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		22388E5E1A365D45003B22B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		22388E611A365D45003B22B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22388E631A365D45003B22B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22388E661A365D45003B22B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		22388E6C1A365D46003B22B6 /* PianoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PianoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22388E711A365D46003B22B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22388E721A365D46003B22B6 /* PianoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PianoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22388E501A365D45003B22B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22388E691A365D46003B22B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22388E4A1A365D45003B22B6 = {
+			isa = PBXGroup;
+			children = (
+				22388E551A365D45003B22B6 /* Piano */,
+				22388E6F1A365D46003B22B6 /* PianoTests */,
+				22388E541A365D45003B22B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22388E541A365D45003B22B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22388E531A365D45003B22B6 /* Piano.app */,
+				22388E6C1A365D46003B22B6 /* PianoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22388E551A365D45003B22B6 /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				22388E5A1A365D45003B22B6 /* AppDelegate.h */,
+				22388E5B1A365D45003B22B6 /* AppDelegate.m */,
+				22388E5D1A365D45003B22B6 /* ViewController.h */,
+				22388E5E1A365D45003B22B6 /* ViewController.m */,
+				22388E601A365D45003B22B6 /* Main.storyboard */,
+				22388E631A365D45003B22B6 /* Images.xcassets */,
+				22388E651A365D45003B22B6 /* LaunchScreen.xib */,
+				22388E561A365D45003B22B6 /* Supporting Files */,
+			);
+			path = Piano;
+			sourceTree = "<group>";
+		};
+		22388E561A365D45003B22B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22388E571A365D45003B22B6 /* Info.plist */,
+				22388E581A365D45003B22B6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22388E6F1A365D46003B22B6 /* PianoTests */ = {
+			isa = PBXGroup;
+			children = (
+				22388E721A365D46003B22B6 /* PianoTests.m */,
+				22388E701A365D46003B22B6 /* Supporting Files */,
+			);
+			path = PianoTests;
+			sourceTree = "<group>";
+		};
+		22388E701A365D46003B22B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22388E711A365D46003B22B6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22388E521A365D45003B22B6 /* Piano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22388E761A365D46003B22B6 /* Build configuration list for PBXNativeTarget "Piano" */;
+			buildPhases = (
+				22388E4F1A365D45003B22B6 /* Sources */,
+				22388E501A365D45003B22B6 /* Frameworks */,
+				22388E511A365D45003B22B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Piano;
+			productName = Piano;
+			productReference = 22388E531A365D45003B22B6 /* Piano.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22388E6B1A365D46003B22B6 /* PianoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22388E791A365D46003B22B6 /* Build configuration list for PBXNativeTarget "PianoTests" */;
+			buildPhases = (
+				22388E681A365D46003B22B6 /* Sources */,
+				22388E691A365D46003B22B6 /* Frameworks */,
+				22388E6A1A365D46003B22B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22388E6E1A365D46003B22B6 /* PBXTargetDependency */,
+			);
+			name = PianoTests;
+			productName = PianoTests;
+			productReference = 22388E6C1A365D46003B22B6 /* PianoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22388E4B1A365D45003B22B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sam Meech-Ward";
+				TargetAttributes = {
+					22388E521A365D45003B22B6 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					22388E6B1A365D46003B22B6 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 22388E521A365D45003B22B6;
+					};
+				};
+			};
+			buildConfigurationList = 22388E4E1A365D45003B22B6 /* Build configuration list for PBXProject "Piano" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22388E4A1A365D45003B22B6;
+			productRefGroup = 22388E541A365D45003B22B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22388E521A365D45003B22B6 /* Piano */,
+				22388E6B1A365D46003B22B6 /* PianoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22388E511A365D45003B22B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22388E621A365D45003B22B6 /* Main.storyboard in Resources */,
+				22388E671A365D45003B22B6 /* LaunchScreen.xib in Resources */,
+				22388E641A365D45003B22B6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22388E6A1A365D46003B22B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22388E4F1A365D45003B22B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22388E5F1A365D45003B22B6 /* ViewController.m in Sources */,
+				22388E5C1A365D45003B22B6 /* AppDelegate.m in Sources */,
+				22388E591A365D45003B22B6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22388E681A365D46003B22B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22388E731A365D46003B22B6 /* PianoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22388E6E1A365D46003B22B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22388E521A365D45003B22B6 /* Piano */;
+			targetProxy = 22388E6D1A365D46003B22B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22388E601A365D45003B22B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22388E611A365D45003B22B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22388E651A365D45003B22B6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22388E661A365D45003B22B6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22388E741A365D46003B22B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22388E751A365D46003B22B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22388E771A365D46003B22B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Piano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		22388E781A365D46003B22B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Piano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		22388E7A1A365D46003B22B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PianoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Piano.app/Piano";
+			};
+			name = Debug;
+		};
+		22388E7B1A365D46003B22B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PianoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Piano.app/Piano";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22388E4E1A365D45003B22B6 /* Build configuration list for PBXProject "Piano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22388E741A365D46003B22B6 /* Debug */,
+				22388E751A365D46003B22B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22388E761A365D46003B22B6 /* Build configuration list for PBXNativeTarget "Piano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22388E771A365D46003B22B6 /* Debug */,
+				22388E781A365D46003B22B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22388E791A365D46003B22B6 /* Build configuration list for PBXNativeTarget "PianoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22388E7A1A365D46003B22B6 /* Debug */,
+				22388E7B1A365D46003B22B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22388E4B1A365D45003B22B6 /* Project object */;
+}
