@@ -18,34 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCX-kx-Cl9">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCX-kx-Cl9">
+                                <rect key="frame" x="0.0" y="174" width="600" height="426"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-mf-Mno" customClass="PianoView">
-                                        <rect key="frame" x="0.0" y="0.0" width="4000" height="300"/>
+                                    <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-mf-Mno" customClass="PianoView">
+                                        <rect key="frame" x="0.0" y="0.0" width="4000" height="426"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="4000" id="Mo1-Wo-rlh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Efx-Uc-nwx"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="top" priority="750" id="CVN-HU-rSc"/>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" id="Ltr-qD-pQ4"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hvx-mf-Mno" secondAttribute="trailing" priority="750" id="R4c-6P-rqw"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hvx-mf-Mno" secondAttribute="bottom" priority="750" id="eZY-39-JvO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hvx-mf-Mno" secondAttribute="trailing" priority="750" constant="-3400" id="R4c-6P-rqw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hvx-mf-Mno" secondAttribute="bottom" priority="750" constant="-24" id="eZY-39-JvO"/>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="leading" secondItem="mCX-kx-Cl9" secondAttribute="leading" id="ipt-A5-Nik"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" multiplier="2" id="0Yj-t6-gfQ"/>
+                            <constraint firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" multiplier="2" constant="-252" id="0Yj-t6-gfQ"/>
                             <constraint firstItem="mCX-kx-Cl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0uV-oE-KcF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="bottom" id="k4T-aF-4wl"/>
                             <constraint firstAttribute="trailing" secondItem="mCX-kx-Cl9" secondAttribute="trailing" id="vIq-0e-MSx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pianoView" destination="Hvx-mf-Mno" id="qjc-oQ-xuO"/>
+                        <outlet property="scrollView" destination="mCX-kx-Cl9" id="SyH-Lq-iUk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

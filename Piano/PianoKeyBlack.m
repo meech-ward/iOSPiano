@@ -16,9 +16,11 @@
 }
 
 -(void)down {
+    [super down];
     self.backgroundColor = [UIColor grayColor].CGColor;
 }
 -(void)up {
+    [super up];
     self.backgroundColor = [UIColor blackColor].CGColor;
 }
 

@@ -30,9 +30,14 @@
     return key;
 }
 
+-(void)down {
+    [self.pianoDelegate pianoKeyDown:self];
+}
+-(void)up {
+    [self.pianoDelegate pianoKeyUp:self];
+}
+
 // Abstract methods
 -(void)setup {}
--(void)down {}
--(void)up {}
 
 @end

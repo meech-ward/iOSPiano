@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Sam Meech-Ward. All rights reserved.
 //
 
+
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -22,6 +24,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Piano View Delegate
+
+-(void)pianoView:(PianoView *)piano keyDown:(short)key {
+    // Find the frequency using the piano key number
+    // Equation found at http://en.wikipedia.org/wiki/Piano_key_frequencies
+    float frequency = pow(pow(2, 1.0/12.0), key-49)*440;
+    
+    NSLog(@"piano key down: %i, frequency: %f", key, frequency);
+}
+
+-(void)pianoView:(PianoView *)piano keyUp:(short)key {
+    
 }
 
 @end

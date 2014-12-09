@@ -21,7 +21,7 @@
 
 @interface PianoView : UIView <PianoKeyDelegate>
 
-@property (nonatomic) id <PianoViewDelegate> delegate;
+@property (nonatomic) IBOutlet id <PianoViewDelegate> delegate;
 
 @end
 
@@ -29,7 +29,7 @@
 @protocol PianoViewDelegate
 
 @optional
--(void)PianoView:(PianoView *)piano keyDown:(short)key;
--(void)PianoView:(PianoView *)piano keyUp:(short)key;
+-(void)pianoView:(PianoView *)piano keyDown:(short)key;
+-(void)pianoView:(PianoView *)piano keyUp:(short)key;
 
 @end

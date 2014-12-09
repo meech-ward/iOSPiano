@@ -39,126 +39,201 @@
 
 -(void)layoutSubviews {
     // Layout the keys here to ensure they are the correct size
-    [self addWhiteKeys];
-    [self addBlackKeys];
+    [self setupPianoKeys];
 }
 
-#pragma mark Piano Keys
+#pragma mark - Piano Keys
 
 
--(void)addWhiteKeys {
-    // Create an array to add the white keys to
-    NSMutableArray *tempWhiteKeys = [[NSMutableArray alloc] init];
+-(void)setupPianoKeys {
+    // Check if keys have already been created
+    BOOL alreadyCreated = (self.allKeys != nil && self.allKeys.count > 0);
     
-    // Set the width of the white keys relative to the size of the view
+    // Create temporary mutable arrays to add the keys to
+    NSMutableArray *tempWhiteKeys = !alreadyCreated ? [[NSMutableArray alloc] init] : nil;
+    NSMutableArray *tempBlackKeys = !alreadyCreated ? [[NSMutableArray alloc] init] : nil;
+    NSMutableArray *tempAllKeys = !alreadyCreated ? [[NSMutableArray alloc] init] : nil;
+    
+    // Set up the piano key sizes
     whiteKeyWidth = (self.bounds.size.width/TOTAL_WHITE_KEYS);
+    float blackWidth = whiteKeyWidth/1.5;
+    float blackHeight = self.bounds.size.height/2;
+    
+    // Create a variable to hold the current key index
+    int currentKeyIndex = 1;
+    
+    // Setup varaibles to help place the black keys
+    BOOL blackGroupFlag = NO;
+    int blackGroupInc = 0;
+    int currentBlackKey = 0;
     
     // Loop though the number of white keys
     for (int i = 0; i < TOTAL_WHITE_KEYS; i++) {
         
-        PianoKeyWhite *whiteKey;
+        // Setup the white key frame
         CGRect whiteKeyFrame = CGRectMake(whiteKeyWidth*i, 0, whiteKeyWidth, self.bounds.size.height);
-        // Check if key already exisits at index
-        if (self.whiteKeys && self.whiteKeys.count > i) {
+        
+        // Check if keys already exisits
+        if (alreadyCreated) {
             // Use existing key
-            whiteKey = self.whiteKeys[i];
+            PianoKeyWhite *whiteKey = self.whiteKeys[i];
             // Set its new frame
             whiteKey.frame = whiteKeyFrame;
         } else {
             // Create a new white piano key next to the last one
-            whiteKey = [PianoKeyWhite newKeyWithFrame: whiteKeyFrame];
+            PianoKeyWhite *whiteKey = [PianoKeyWhite newKeyWithFrame: whiteKeyFrame];
             whiteKey.pianoDelegate = self;
             
             // Set its key number to the value of i, this will be used later when the key is tapped
-            whiteKey.keyNumber = i;
+            whiteKey.keyNumber = currentKeyIndex++;
             
-            // Add the piano key to the view
-            [self.layer addSublayer:whiteKey];
-        }
-        // Add the current key to the array
-        [tempWhiteKeys addObject:whiteKey];
-    }
+            // Add the piano key to the view and temp array
+            [self.layer insertSublayer:whiteKey atIndex:0];
+            [tempWhiteKeys addObject:whiteKey];
+            // Add the key to the all keys array
+            [tempAllKeys addObject:whiteKey];
+            
+        }// White keys
+        
+        // Make sure not to exceed the total black keys
+        if (currentBlackKey < TOTAL_BLACK_KEYS) {
+            
+            // Check if we need to add a black key, or if we leave a blank space
+            if (i == 1 || (blackGroupFlag && blackGroupInc == 3) || (!blackGroupFlag && blackGroupInc == 4)) {
+                // Leave a gap
+                blackGroupFlag = !blackGroupFlag;
+                blackGroupInc = 0;
+            } else {
+                // Add a new black key
+                
+                // Set black key size
+                CGRect blackKeyFrame = CGRectMake(whiteKeyFrame.origin.x+whiteKeyFrame.size.width - (blackWidth/2), 0, blackWidth, blackHeight);
+                
+                // Check if key already exisits
+                if (alreadyCreated) {
+                    // Use existing key
+                    PianoKeyBlack *blackKey = self.blackKeys[currentBlackKey];
+                    // Set its new frame
+                    blackKey.frame = blackKeyFrame;
+                } else {
+                    // Create a new black key
+                    PianoKeyBlack *blackKey = [PianoKeyBlack newKeyWithFrame:blackKeyFrame];
+                    blackKey.pianoDelegate = self;
+                    
+                    // Set its key number to the value of i, this will be used later when the key is tapped
+                    blackKey.keyNumber = currentKeyIndex++;
+                    
+                    // Add it to the view and array
+                    [self.layer insertSublayer:blackKey atIndex:1];
+                    [tempBlackKeys addObject:blackKey];
+                    // Add the key to the all keys array
+                    [tempAllKeys addObject:blackKey];
+                }
+                currentBlackKey++;
+            }
+            blackGroupInc++;
+        } // Black Keys
+        
+    } // For loop
     
-    // Setup the white keys array with all the white keys
-    self.whiteKeys = [[NSArray alloc] initWithArray:tempWhiteKeys];
+    // Update the arrays
+    if (!alreadyCreated) {
+        self.blackKeys = [[NSArray alloc] initWithArray:tempBlackKeys];
+        self.whiteKeys = [[NSArray alloc] initWithArray:tempWhiteKeys];
+        self.allKeys = [[NSArray alloc] initWithArray:tempAllKeys];
+    }
 }
 
--(void)addBlackKeys {
-    // Set the black key width relative to the white key width
-    float blackWidth = whiteKeyWidth/1.5;
-    
-    // Set the black key x value to start in the center of the first two white keys
-    PianoKeyWhite *secondWhiteKey = self.whiteKeys[1];
-    float blackX = secondWhiteKey.frame.origin.x - (blackWidth/2);
-    
-    // Set the black key's height relative to the current view's size
-    float blackHeight = self.bounds.size.height/2;
+#pragma mark - Touches 
 
-    // Create an array to add the white keys to
-    NSMutableArray *tempBlackKeys = [[NSMutableArray alloc] init];
-    
-    // Setup loop variables
-    BOOL flag = false;
-    int current = 0;
-    
-    // Loop through the number of black keys
-    for (int i = 0; i < TOTAL_BLACK_KEYS; i++) {
-        
-        // Declare the black key and its frame
-        PianoKeyBlack *blackKey;
-        CGRect blackKeyFrame = CGRectMake(blackX, 0, blackWidth, blackHeight);
+// Apple touch events
 
-        // Check if key already exisits at index
-        if (self.blackKeys && self.blackKeys.count > i) {
-            // Use existing key
-            blackKey = self.blackKeys[i];
-            // Set its new frame
-            blackKey.frame = blackKeyFrame;
-        } else {
-            // Create a new black key
-            blackKey = [PianoKeyBlack newKeyWithFrame:blackKeyFrame];
-            blackKey.pianoDelegate = self;
-            
-            // Set its key number to the value of i, this will be used later when the key is tapped
-            blackKey.keyNumber = i;
-            
-            // Add it to the view and array
-            [self.layer addSublayer:blackKey];
-        }
-        
-        // Add it to the temp array
-        [tempBlackKeys addObject:blackKey];
-        
-        // Adjust the x value for the next black key
-        blackX += whiteKeyWidth;
-        
-        
-        // Adjust the x value so that it alternates between groups of 2 and 3 black keys, with 1 black key at the start
-        if (i == 0 || (flag && current == 2) || (!flag && current == 3)) {
-            flag = !flag;
-            current = 0;
-            blackX += whiteKeyWidth;
-        }
-        current++;
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        [touch reset];
     }
-    
-    // Setup the black keys array with all the black keys
-    self.blackKeys = [[NSArray alloc] initWithArray:tempBlackKeys];
+    [self touchesDown:touches];
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self touchesDown:touches];
+}
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self touchesUp:touches];
+}
+
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self touchesUp:touches];
+}
+
+// My touch events
+
+-(void)touchesDown:(NSSet *)touches {
+    // Loop through all the touches
+    for (UITouch *touch in touches) {
+        
+        // Get the current key being touched
+        int keyNumber = [self getKeyForPoint:[touch locationInView:self]];
+        if (keyNumber < 0) { break; }
+        
+        // Check if the key is already being played
+        if (![touch isSameKey:keyNumber]) {
+            
+            // Different Key
+            PianoKey *newKey = [self.allKeys objectAtIndex:keyNumber-1];
+            [newKey down];
+            
+            // Reset the old key
+            int lastKeyNumber = [touch lastKey];
+            if (lastKeyNumber > -1) {
+                PianoKey *oldKey = [self.allKeys objectAtIndex:lastKeyNumber-1];
+                [oldKey up];
+            }
+        }
+    }
+}
+
+-(void)touchesUp:(NSSet *)touches {
+    // Loop through all the touches
+    for (UITouch *touch in touches) {
+        
+        //Reset the key and the touch
+        int currentKey = [touch currentKey];
+        if (currentKey < 0) { break; }
+        PianoKey *key = [self.allKeys objectAtIndex:currentKey-1];
+        [key up];
+        [touch reset];
+    }
+}
+
+-(int)getKeyForPoint:(CGPoint)point {
+    // First loop through the black keys
+    for (PianoKey *key in self.blackKeys) {
+        if (CGRectContainsPoint(key.frame, point)) {
+            return key.keyNumber;
+        }
+    }
+    
+    // Then check the white keys
+    for (PianoKey *key in self.whiteKeys) {
+        if (CGRectContainsPoint(key.frame, point)) {
+            return key.keyNumber;
+        }
+    }
+    
+    // No key was tapped
+    return -1;
+}
 
 #pragma mark - Piano Key Delegate
 
--(void)PianoKeyUp:(PianoKey *)key {
-    [self.delegate PianoView:self keyUp:key.keyNumber];
+-(void)pianoKeyUp:(PianoKey *)key {
+    [self.delegate pianoView:self keyUp:key.keyNumber];
 }
 
--(void)PianoKeyDown:(PianoKey *)key {
-    [self.delegate PianoView:self keyDown:key.keyNumber];
+-(void)pianoKeyDown:(PianoKey *)key {
+    [self.delegate pianoView:self keyDown:key.keyNumber];
 }
-
-
-
 
 @end

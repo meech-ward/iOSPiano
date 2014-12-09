@@ -32,7 +32,7 @@
 // Setup the piano key delegate methods
 @protocol PianoKeyDelegate
 
--(void)PianoKeyDown:(PianoKey *)key;
--(void)PianoKeyUp:(PianoKey *)key;
+-(void)pianoKeyDown:(PianoKey *)key;
+-(void)pianoKeyUp:(PianoKey *)key;
 
 @end
