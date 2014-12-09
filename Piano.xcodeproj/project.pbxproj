@@ -14,6 +14,11 @@
 		22388E641A365D45003B22B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22388E631A365D45003B22B6 /* Images.xcassets */; };
 		22388E671A365D45003B22B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22388E651A365D45003B22B6 /* LaunchScreen.xib */; };
 		22388E731A365D46003B22B6 /* PianoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E721A365D46003B22B6 /* PianoTests.m */; };
+		22388E8C1A365DCA003B22B6 /* PianoKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E831A365DCA003B22B6 /* PianoKey.m */; };
+		22388E8D1A365DCA003B22B6 /* PianoKeyBlack.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E851A365DCA003B22B6 /* PianoKeyBlack.m */; };
+		22388E8E1A365DCA003B22B6 /* PianoKeyWhite.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E871A365DCA003B22B6 /* PianoKeyWhite.m */; };
+		22388E8F1A365DCA003B22B6 /* PianoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E891A365DCA003B22B6 /* PianoView.m */; };
+		22388E901A365DCA003B22B6 /* UITouch+PianoKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 22388E8B1A365DCA003B22B6 /* UITouch+PianoKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,16 @@
 		22388E6C1A365D46003B22B6 /* PianoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PianoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22388E711A365D46003B22B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22388E721A365D46003B22B6 /* PianoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PianoTests.m; sourceTree = "<group>"; };
+		22388E821A365DCA003B22B6 /* PianoKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoKey.h; sourceTree = "<group>"; };
+		22388E831A365DCA003B22B6 /* PianoKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoKey.m; sourceTree = "<group>"; };
+		22388E841A365DCA003B22B6 /* PianoKeyBlack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoKeyBlack.h; sourceTree = "<group>"; };
+		22388E851A365DCA003B22B6 /* PianoKeyBlack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoKeyBlack.m; sourceTree = "<group>"; };
+		22388E861A365DCA003B22B6 /* PianoKeyWhite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoKeyWhite.h; sourceTree = "<group>"; };
+		22388E871A365DCA003B22B6 /* PianoKeyWhite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoKeyWhite.m; sourceTree = "<group>"; };
+		22388E881A365DCA003B22B6 /* PianoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoView.h; sourceTree = "<group>"; };
+		22388E891A365DCA003B22B6 /* PianoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoView.m; sourceTree = "<group>"; };
+		22388E8A1A365DCA003B22B6 /* UITouch+PianoKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+PianoKey.h"; sourceTree = "<group>"; };
+		22388E8B1A365DCA003B22B6 /* UITouch+PianoKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+PianoKey.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 				22388E5B1A365D45003B22B6 /* AppDelegate.m */,
 				22388E5D1A365D45003B22B6 /* ViewController.h */,
 				22388E5E1A365D45003B22B6 /* ViewController.m */,
+				22388E7F1A365D96003B22B6 /* Piano */,
 				22388E601A365D45003B22B6 /* Main.storyboard */,
 				22388E631A365D45003B22B6 /* Images.xcassets */,
 				22388E651A365D45003B22B6 /* LaunchScreen.xib */,
@@ -117,6 +133,31 @@
 				22388E711A365D46003B22B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22388E7F1A365D96003B22B6 /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				22388E881A365DCA003B22B6 /* PianoView.h */,
+				22388E891A365DCA003B22B6 /* PianoView.m */,
+				22388E801A365D9F003B22B6 /* Piano Keys */,
+			);
+			name = Piano;
+			sourceTree = "<group>";
+		};
+		22388E801A365D9F003B22B6 /* Piano Keys */ = {
+			isa = PBXGroup;
+			children = (
+				22388E821A365DCA003B22B6 /* PianoKey.h */,
+				22388E831A365DCA003B22B6 /* PianoKey.m */,
+				22388E841A365DCA003B22B6 /* PianoKeyBlack.h */,
+				22388E851A365DCA003B22B6 /* PianoKeyBlack.m */,
+				22388E861A365DCA003B22B6 /* PianoKeyWhite.h */,
+				22388E871A365DCA003B22B6 /* PianoKeyWhite.m */,
+				22388E8A1A365DCA003B22B6 /* UITouch+PianoKey.h */,
+				22388E8B1A365DCA003B22B6 /* UITouch+PianoKey.m */,
+			);
+			name = "Piano Keys";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22388E8D1A365DCA003B22B6 /* PianoKeyBlack.m in Sources */,
+				22388E901A365DCA003B22B6 /* UITouch+PianoKey.m in Sources */,
+				22388E8E1A365DCA003B22B6 /* PianoKeyWhite.m in Sources */,
 				22388E5F1A365D45003B22B6 /* ViewController.m in Sources */,
+				22388E8C1A365DCA003B22B6 /* PianoKey.m in Sources */,
+				22388E8F1A365DCA003B22B6 /* PianoView.m in Sources */,
 				22388E5C1A365D45003B22B6 /* AppDelegate.m in Sources */,
 				22388E591A365D45003B22B6 /* main.m in Sources */,
 			);
@@ -346,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Piano/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Piano/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCX-kx-Cl9">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-mf-Mno" customClass="PianoView">
+                                        <rect key="frame" x="0.0" y="0.0" width="4000" height="300"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="4000" id="Mo1-Wo-rlh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Hvx-mf-Mno" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="top" priority="750" id="CVN-HU-rSc"/>
+                                    <constraint firstItem="Hvx-mf-Mno" firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" id="Ltr-qD-pQ4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hvx-mf-Mno" secondAttribute="trailing" priority="750" id="R4c-6P-rqw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hvx-mf-Mno" secondAttribute="bottom" priority="750" id="eZY-39-JvO"/>
+                                    <constraint firstItem="Hvx-mf-Mno" firstAttribute="leading" secondItem="mCX-kx-Cl9" secondAttribute="leading" id="ipt-A5-Nik"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" multiplier="2" id="0Yj-t6-gfQ"/>
+                            <constraint firstItem="mCX-kx-Cl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0uV-oE-KcF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="bottom" id="k4T-aF-4wl"/>
+                            <constraint firstAttribute="trailing" secondItem="mCX-kx-Cl9" secondAttribute="trailing" id="vIq-0e-MSx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="430"/>
         </scene>
     </scenes>
 </document>
