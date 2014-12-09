@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Piano
 //
-//  Created by Sam Meech Ward on 2014-12-08.
+//  Created by Sam Meech-Ward on 2014-12-08.
 //  Copyright (c) 2014 Sam Meech-Ward. All rights reserved.
 //
 
@@ -19,6 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //adjust the piano view to the center\
+    not the best place to put it, works for this example
+    [self adjustPianoViewToPercent:50.0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +46,22 @@
 
 -(void)pianoView:(PianoView *)piano keyUp:(short)key {
     
+}
+
+#pragma mark - Actions
+
+- (IBAction)sliderValueChanged:(UISlider *)sender {
+    [self adjustPianoViewToPercent:sender.value];
+}
+
+#pragma mark - Piano Scroll View
+
+-(void)adjustPianoViewToPercent:(float)percent {
+    // Adjust the position of the piano view using a percentage, \
+    0 = piano displays the first keys on the left, \
+    100 = piano displayes the last keys on the right
+    float maxContentOffset = self.pianoView.bounds.size.width-self.scrollView.bounds.size.width;
+    [self.scrollView setContentOffset:CGPointMake(maxContentOffset*(percent/100), 0) animated:NO];
 }
 
 @end

@@ -2,8 +2,8 @@
 //  PianoView.m
 //  BurpAndFartPiano
 //
-//  Created by Sam Meech Ward on 2014-08-01.
-//  Copyright (c) 2014 Appsamax Ltd. All rights reserved.
+//  Created by Sam Meech-Ward on 2014-08-01.
+//  Copyright (c) 2014 Sam Meech-Ward. All rights reserved.
 //
 
 // Piano Keys
@@ -39,13 +39,13 @@
 
 -(void)layoutSubviews {
     // Layout the keys here to ensure they are the correct size
-    [self setupPianoKeys];
+    [self layoutPianoKeys];
 }
 
 #pragma mark - Piano Keys
 
 
--(void)setupPianoKeys {
+-(void)layoutPianoKeys {
     // Check if keys have already been created
     BOOL alreadyCreated = (self.allKeys != nil && self.allKeys.count > 0);
     
@@ -63,8 +63,8 @@
     int currentKeyIndex = 1;
     
     // Setup varaibles to help place the black keys
-    BOOL blackGroupFlag = NO;
-    int blackGroupInc = 0;
+    BOOL blackGroupOfTwo = NO;
+    int numberOfWhiteKeys = 0;
     int currentBlackKey = 0;
     
     // Loop though the number of white keys
@@ -99,10 +99,13 @@
         if (currentBlackKey < TOTAL_BLACK_KEYS) {
             
             // Check if we need to add a black key, or if we leave a blank space
-            if (i == 1 || (blackGroupFlag && blackGroupInc == 3) || (!blackGroupFlag && blackGroupInc == 4)) {
+            BOOL lonelyBlackKey = i == 1; // If i == 1 leave a blank space because an 88 key keyboard has 1 black key to start
+            BOOL groupOfTwo = (blackGroupOfTwo && numberOfWhiteKeys == 3);// Alternate between a group of two black keys and a group of three black keys
+            BOOL groupOfThree = (!blackGroupOfTwo && numberOfWhiteKeys == 4);// A group of two black keys sits on top of a 3 white keys, a group of three black keys sits on top of 4 white keys
+            if (lonelyBlackKey || groupOfTwo || groupOfThree) {
                 // Leave a gap
-                blackGroupFlag = !blackGroupFlag;
-                blackGroupInc = 0;
+                blackGroupOfTwo = !blackGroupOfTwo;
+                numberOfWhiteKeys = 0;
             } else {
                 // Add a new black key
                 
@@ -131,7 +134,7 @@
                 }
                 currentBlackKey++;
             }
-            blackGroupInc++;
+            numberOfWhiteKeys++;
         } // Black Keys
         
     } // For loop

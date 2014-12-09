@@ -2,9 +2,12 @@
 //  PianoView.h
 //  BurpAndFartPiano
 //
-//  Created by Sam Meech Ward on 2014-08-01.
-//  Copyright (c) 2014 Appsamax Ltd. All rights reserved.
+//  Created by Sam Meech-Ward on 2014-08-01.
+//  Copyright (c) 2014 Sam Meech-Ward. All rights reserved.
 //
+
+// This is currently an 88 key piano, with 52 white keys and 36 black keys\
+This could easily be changed to create a piano with any number of keys in any number of orders
 
 // Constants
 #define TOTAL_WHITE_KEYS ((UInt8)52)

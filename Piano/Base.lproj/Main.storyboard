@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -22,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="174" width="600" height="426"/>
                                 <subviews>
                                     <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-mf-Mno" customClass="PianoView">
-                                        <rect key="frame" x="0.0" y="0.0" width="4000" height="426"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="3500" height="426"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="4000" id="Mo1-Wo-rlh"/>
+                                            <constraint firstAttribute="width" constant="3500" id="Mo1-Wo-rlh"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Efx-Uc-nwx"/>
@@ -35,16 +36,25 @@
                                 <constraints>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="top" priority="750" id="CVN-HU-rSc"/>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" id="Ltr-qD-pQ4"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hvx-mf-Mno" secondAttribute="trailing" priority="750" constant="-3400" id="R4c-6P-rqw"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hvx-mf-Mno" secondAttribute="bottom" priority="750" constant="-24" id="eZY-39-JvO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hvx-mf-Mno" secondAttribute="trailing" priority="750" constant="-2900" id="R4c-6P-rqw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hvx-mf-Mno" secondAttribute="bottom" priority="750" id="eZY-39-JvO"/>
                                     <constraint firstItem="Hvx-mf-Mno" firstAttribute="leading" secondItem="mCX-kx-Cl9" secondAttribute="leading" id="ipt-A5-Nik"/>
                                 </constraints>
                             </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-FR-sIm">
+                                <rect key="frame" x="14" y="20" width="572" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lmL-6M-TLo"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="mCX-kx-Cl9" secondAttribute="height" multiplier="2" constant="-252" id="0Yj-t6-gfQ"/>
                             <constraint firstItem="mCX-kx-Cl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0uV-oE-KcF"/>
+                            <constraint firstItem="8zI-FR-sIm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="W1Z-Ua-emT"/>
+                            <constraint firstItem="8zI-FR-sIm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dpZ-sB-aRd"/>
+                            <constraint firstItem="8zI-FR-sIm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hSY-Yz-uNV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mCX-kx-Cl9" secondAttribute="bottom" id="k4T-aF-4wl"/>
                             <constraint firstAttribute="trailing" secondItem="mCX-kx-Cl9" secondAttribute="trailing" id="vIq-0e-MSx"/>
                         </constraints>
@@ -52,6 +62,7 @@
                     <connections>
                         <outlet property="pianoView" destination="Hvx-mf-Mno" id="qjc-oQ-xuO"/>
                         <outlet property="scrollView" destination="mCX-kx-Cl9" id="SyH-Lq-iUk"/>
+                        <outlet property="slider" destination="8zI-FR-sIm" id="N6u-2I-bVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
